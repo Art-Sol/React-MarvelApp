@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import AppBanner from "../appBanner/AppBanner";
+import AppBanner from "../components/appBanner/AppBanner";
 
-import useMarvelService from "../../services/MarvelService";
-import setContent from "../../utils/setContent";
+import useMarvelService from "../services/MarvelService";
+import setContent from "../utils/setContent";
 
 const SinglePage = ({ Component, dataType }) => {
   const { id } = useParams();
@@ -28,6 +28,11 @@ const SinglePage = ({ Component, dataType }) => {
         break;
       case "character":
         getCharacter(id)
+          .then((res) => onDataLoaded(res))
+          .then(() => setProcess("confirmed"));
+        break;
+      default:
+        getComics(id)
           .then((res) => onDataLoaded(res))
           .then(() => setProcess("confirmed"));
         break;

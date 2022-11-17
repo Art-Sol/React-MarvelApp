@@ -1,31 +1,41 @@
-@import '../../style/variables.scss';
+@import "../../style/variables.scss";
 
 .app {
-    &__header {
-        display: flex;
-        justify-content: space-between;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 600px) {
+      flex-direction: column;
     }
-    &__title {
-        font-weight: bold;
-        font-size: 28px;
-        line-height: 37px;
-        span {
-            color: $main-color;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 37px;
+    @media (max-width: 600px) {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    span {
+      color: $main-color;
+    }
+  }
+  &__menu {
+    ul {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 32px;
+      @media (max-width: 600px) {
+        justify-content: center;
+      }
+      li {
+        margin: 0 8px;
+        a:hover {
+          color: $main-color;
         }
+      }
     }
-    &__menu {
-        ul {
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            font-size: 24px;
-            line-height: 32px;
-            li {
-                margin: 0 8px;
-                a:hover {
-                    color: $main-color;
-                }
-            }
-        }
-    }
+  }
 }

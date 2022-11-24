@@ -5,7 +5,7 @@ import setContent from "../../utils/setContent";
 import "./randomChar.scss";
 import mjolnir from "../../resources/img/mjolnir.png";
 
-const RandomChar = () => {
+export const RandomChar = () => {
   const [char, setChar] = useState(null);
   const { getCharacter, clearError, process, setProcess } = useMarvelService();
 
@@ -71,5 +71,3 @@ const View = ({ data }) => {
     </div>
   );
 };
-
-export default RandomChar;

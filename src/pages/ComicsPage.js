@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet";
 
-import AppBanner from "../components/appBanner/AppBanner";
-import ComicsList from "../components/comicsList/ComicsList";
+import { AppBanner, ComicsList } from "../components";
 
 const ComicsPage = () => {
   return (

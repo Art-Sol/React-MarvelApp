@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import AppBanner from "../components/appBanner/AppBanner";
+import { AppBanner } from "../components";
 
 import useMarvelService from "../services/MarvelService";
 import setContent from "../utils/setContent";

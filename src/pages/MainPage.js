@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 
-import RandomChar from "../components/randomChar/RandomChar";
-import CharList from "../components/charList/CharList";
-import CharInfo from "../components/charInfo/CharInfo";
-import CharSearchForm from "../components/charSearchForm/charSearchForm";
-import ErrorBoundary from "../components/errorBoundary/ErrorBoundary";
-
-import decoration from "../resources/img/vision.png";
+import {
+  CharInfo,
+  CharList,
+  CharSearchForm,
+  ErrorBoundary,
+  RandomChar,
+} from "../components/";
 
 const MainPage = () => {
   const [selectedChar, setChar] = useState(null);
@@ -38,7 +38,6 @@ const MainPage = () => {
           </ErrorBoundary>
         </div>
       </div>
-      {/* <img className="bg-decoration" src={decoration} alt="vision" /> */}
     </>
   );
 };

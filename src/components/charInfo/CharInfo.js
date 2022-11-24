@@ -7,7 +7,7 @@ import setContent from "../../utils/setContent";
 
 import "./charInfo.scss";
 
-const CharInfo = (props) => {
+export const CharInfo = (props) => {
   const [char, setChar] = useState(null);
   const { getCharacter, clearError, process, setProcess } = useMarvelService();
 
@@ -87,5 +87,3 @@ const View = ({ data }) => {
 CharInfo.propTypes = {
   charId: PropTypes.number,
 };
-
-export default CharInfo;

@@ -2,9 +2,8 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import PropTypes from "prop-types";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
+import { ErrorMessage, Spinner } from "../../components";
 import useMarvelService from "../../services/MarvelService";
-import Spinner from "../spinner/Spinner";
-import ErrorMessage from "../errorMessage/ErrorMessage";
 
 import "./charList.scss";
 
@@ -23,7 +22,7 @@ const setContent = (process, Component, newItemLoading) => {
   }
 };
 
-const CharList = (props) => {
+export const CharList = (props) => {
   const [charList, setCharList] = useState([]);
   const [newItemLoading, setNewItemLoading] = useState(false);
   const [offset, setOffset] = useState(301);
@@ -128,5 +127,3 @@ const CharList = (props) => {
 CharList.propTypes = {
   onCharSelected: PropTypes.func.isRequired,
 };
-
-export default CharList;

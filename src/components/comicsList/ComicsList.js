@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import { ErrorMessage, Spinner } from "../../components";
 import useMarvelService from "../../services/MarvelService";
-import Spinner from "../spinner/Spinner";
-import ErrorMessage from "../errorMessage/ErrorMessage";
 
 import "./comicsList.scss";
 
@@ -11,22 +10,18 @@ const setContent = (process, Component, newItemLoading) => {
   switch (process) {
     case "waiting":
       return <Spinner />;
-
     case "loading":
       return newItemLoading ? <Component /> : <Spinner />;
-
     case "confirmed":
       return <Component />;
-
     case "error":
       return <ErrorMessage />;
-
     default:
       throw new Error("Unexpexted process state");
   }
 };
 
-const ComicsList = () => {
+export const ComicsList = () => {
   const [comicsList, setComicsList] = useState([]);
   const [offset, setOffset] = useState(0);
   const [newComicsLoading, setNewComicsLoading] = useState(false);
@@ -92,5 +87,3 @@ const ComicsList = () => {
     </div>
   );
 };
-
-export default ComicsList;

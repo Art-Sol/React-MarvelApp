@@ -1,10 +1,11 @@
-import ErrorMessge from "../components/errorMessage/ErrorMessage";
 import { Link } from "react-router-dom";
+
+import { ErrorMessage } from "../components";
 
 const Page404 = () => {
   return (
     <div>
-      <ErrorMessge />
+      <ErrorMessage />
       <p
         style={{
           textAlign: "center",
